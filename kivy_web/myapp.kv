@@ -1,0 +1,54 @@
+<Manager>:
+    Menu:
+        name: "menu"
+<Menu>:
+    BoxLayout: 
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: "vertical"
+        padding: root.width * 0.10, root.height * 0.1
+        BoxLayout:
+            orientation: "vertical"
+            Image:
+                source: "data/happyBallon.jpg"
+            Label:
+                text: "Portal de Festa"
+                color: 0, 0, 0, 1 
+                bold: True
+                font_size: 30
+                spacing: 30
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 30
+            BottonMenu:
+                text: "Criar Festa"
+                bold: True
+                font_size: 20
+                #size_hint_y: None
+                heigth: 50
+            BottonMenu:
+                text: "Acessar Festa"
+                bold: True
+                font_size: 20
+                #size_hint_y: None
+                heigth: 50
+            BottonMenu:
+                text: "Tirar Duvidas"
+                bold: True
+                font_size: 20
+                #size_hint_y: None
+                heigth: 50
+
+<BottonMenu@ButtonBehavior+Label>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.5, 0.7, 1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20]
+
