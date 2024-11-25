@@ -1,0 +1,5 @@
+flet - criar site aplicativo e programa para computdor
+flask - criar site
+django - criar site
+kivy - - criar aplicativo
+tkinter - criar tela para os programas

@@ -1,0 +1,6 @@
+python -m venv venv
+venv\Scripts\activate
+
+instalar o pandas
+pip install pandas, numpy
+There was an error while processing your request: Text__init__() got an unexpected keyword argument 'label'
