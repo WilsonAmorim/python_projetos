@@ -1,6 +1,14 @@
 <Manager>:
     Menu:
         name: "menu"
+    CreateParty:
+        name: "createParty"
+    BeforOfCreateParty:
+        name: "beforParty"
+    Screen1:
+        name: "screen1"
+    Screen2:
+        name: "screen2"
 <Menu>:
     BoxLayout: 
         canvas:
@@ -10,7 +18,7 @@
                 pos: self.pos
                 size: self.size
         orientation: "vertical"
-        padding: root.width * 0.10, root.height * 0.1
+        padding: root.width * 0.20, root.height * 0.2
         BoxLayout:
             orientation: "vertical"
             Image:
@@ -30,18 +38,86 @@
                 font_size: 20
                 #size_hint_y: None
                 heigth: 50
+                on_release: 
+                    app.root.current =  "createParty"
+                    app.root.transition.direction = "left"
             BottonMenu:
                 text: "Acessar Festa"
                 bold: True
                 font_size: 20
                 #size_hint_y: None
                 heigth: 50
+                on_release:
+                    root.checkStatus() 
             BottonMenu:
                 text: "Tirar Duvidas"
                 bold: True
                 font_size: 20
                 #size_hint_y: None
                 heigth: 50
+
+<CreateParty>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 14/255.0, 21/255.0, 54/255.0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: "vertical"
+        padding: root.width * 0.20, root.height * 0.2
+        Label:
+            text: "Deseja criar sua festa?"
+            bold: True
+            font_size: 30
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 20
+            BottonMenu:
+                text: "Sim, continuar"
+                bold: True
+                font_size: 20
+                size_hint_y: None
+                height: 50
+            BottonMenu:
+                text: "Não, voltar"
+                bold: True
+                font_size: 20
+                size_hint_y: None
+                height: 50
+                on_release:
+                    app.root.current = "menu"
+                    app.root.transition.direction = "right"
+
+<BeforOfCreateParty>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 14/255.0, 21/255.0, 54/255.0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: "vertical"
+
+<Screen1>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba:1, 0, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: "vertical"
+
+<Screen2>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0, 1, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        orientation: "vertical"
 
 <BottonMenu@ButtonBehavior+Label>:
     canvas.before:
